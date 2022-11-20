@@ -1,6 +1,6 @@
 [
     {
-        "id": "98b51e90aba4ca45",
+        "id": "434f0af6ac506466",
         "type": "tab",
         "label": "GasFinder Node-RED",
         "disabled": false,
@@ -8,161 +8,77 @@
         "env": []
     },
     {
-        "id": "3ba37fd4.6558f",
-        "type": "ui_group",
-        "name": "Example Flow",
-        "tab": "72415252.b2cadc",
-        "order": 1,
-        "disp": true,
-        "width": "8",
-        "collapse": false
+        "id": "f31982925b5c5cae",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "434f0af6ac506466",
+        "name": "",
+        "account": "47e677dd4ddab23a",
+        "text": "payload",
+        "inputtypemessage": "msg",
+        "rejectssl": false,
+        "x": 960,
+        "y": 360,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "72415252.b2cadc",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
+        "id": "13dfd54d0b585184",
+        "type": "mqtt in",
+        "z": "434f0af6ac506466",
+        "name": "",
+        "topic": "GasFinder",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "d978751097242e06",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 460,
+        "y": 300,
+        "wires": [
+            [
+                "cf97760a826717f3"
+            ]
+        ]
     },
     {
-        "id": "6e4e3dda0364edbd",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-light",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#097479",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0094ce",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey",
-                "palette": "light"
-            }
-        },
-        "site": {
-            "name": "Node-RED Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "false",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 0,
-                "py": 0
-            }
-        }
+        "id": "cf97760a826717f3",
+        "type": "function",
+        "z": "434f0af6ac506466",
+        "name": "",
+        "func": "const delay = ms => new Promise(res => setTimeout(res, ms));\nawait delay(5000);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "f31982925b5c5cae",
+                "ffd027a18308d960"
+            ]
+        ]
     },
     {
-        "id": "4b271a6654221eed",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "3acc73301dd56097",
-        "type": "ui_group",
-        "name": "Default",
-        "tab": "4b271a6654221eed",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "8054d67359ae61fc",
-        "type": "twitter-credentials",
-        "screen_name": "ws_neutronica"
-    },
-    {
-        "id": "91c08538a8fb1961",
-        "type": "chatbot-telegram-node",
-        "botname": "Neutron",
-        "usernames": "",
-        "token": "5100057946:AAGqPmRzXIafJt65OgmV4_07HyYDHAqxyn8",
-        "providerToken": "",
-        "polling": "1000",
-        "store": "",
-        "log": "",
-        "debug": false,
-        "webHook": "",
-        "connectMode": "polling"
-    },
-    {
-        "id": "80b99021.9a4",
-        "type": "node-red-contrib-whatsapp-cmb-account",
-        "name": "WhatsApp API Account"
+        "id": "ffd027a18308d960",
+        "type": "debug",
+        "z": "434f0af6ac506466",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 440,
+        "wires": []
     },
     {
         "id": "47e677dd4ddab23a",
@@ -194,78 +110,5 @@
         "willPayload": "",
         "willMsg": {},
         "sessionExpiry": ""
-    },
-    {
-        "id": "f465e0fbc573a299",
-        "type": "node-red-contrib-whatsapp-cmb-send-message",
-        "z": "98b51e90aba4ca45",
-        "name": "",
-        "account": "47e677dd4ddab23a",
-        "text": "payload",
-        "inputtypemessage": "msg",
-        "rejectssl": false,
-        "x": 640,
-        "y": 360,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "91d0ba57f1e30b18",
-        "type": "mqtt in",
-        "z": "98b51e90aba4ca45",
-        "name": "",
-        "topic": "32093705_GasFinder",
-        "qos": "2",
-        "datatype": "utf8",
-        "broker": "d978751097242e06",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 180,
-        "y": 300,
-        "wires": [
-            [
-                "5612e6405a8a9fe3"
-            ]
-        ]
-    },
-    {
-        "id": "5612e6405a8a9fe3",
-        "type": "function",
-        "z": "98b51e90aba4ca45",
-        "name": "",
-        "func": "const delay = ms => new Promise(res => setTimeout(res, ms));\nawait delay(5000);\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 400,
-        "y": 300,
-        "wires": [
-            [
-                "f465e0fbc573a299",
-                "447b72a939bef139"
-            ]
-        ]
-    },
-    {
-        "id": "447b72a939bef139",
-        "type": "debug",
-        "z": "98b51e90aba4ca45",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 440,
-        "wires": []
     }
 ]
